@@ -21,6 +21,7 @@ import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
+import service.IGeneralService;
 import service.IPostService;
 import service.impl.PostServiceImpl;
 
@@ -48,7 +49,7 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
     public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setApplicationContext(applicationContext);
-        templateResolver.setPrefix("/WEB-INF/views"); // tiền tố
+        templateResolver.setPrefix("/WEB-INF/views/"); // tiền tố
         templateResolver.setSuffix(".html"); // hậu tố
         templateResolver.setTemplateMode(TemplateMode.HTML); // kiểu views
         templateResolver.setCharacterEncoding("UTF-8"); // định dạng chữ
@@ -114,7 +115,7 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
     }
 
     @Bean
-    public IPostService provinceService() {
+    public PostServiceImpl provinceService(){
         return new PostServiceImpl();
     }
 }

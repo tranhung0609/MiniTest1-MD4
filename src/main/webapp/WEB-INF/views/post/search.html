@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+</head>
+<body>
+<h3>Products</h3>
+
+
+<table id = "customers">
+    <thead>
+    <tr>
+        <th>Content</th>
+        <th>CreateAt</th>
+        <th>Likes</th>
+        <th>Title</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="post : ${posts}">
+        <td th:text="${post.content}"></td>
+        <td th:text="${post.createAt}"></td>
+        <td th:text="${post.likes}"></td>
+        <td th:text="${post.tittle}"></td>
+    </tr>
+    </tbody>
+</table>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>

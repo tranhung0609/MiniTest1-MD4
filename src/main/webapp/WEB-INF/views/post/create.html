@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+</head>
+<body>
+<h3>Products</h3>
+
+<form action="#" th:action="@{/posts/create}" method="post"  >
+    Content: <input type="text" name="content">
+    <br/>
+    CreateAt:<input type="datetime-local" name="createAt">
+    <br/>
+    Likes:<input type="text" name="likes">
+    <br/>
+    Title:<input type="text" name="tittle">
+    <button>Create</button>
+</form>
+
+
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>

@@ -8,16 +8,16 @@ import java.util.Date;
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     private String tittle;
     private String content;
-    private Date createAt;
+    private String createAt;
     private int likes;
 
     public Post() {
     }
 
-    public Post(Long id, String tittle, String content, Date createAt, int likes) {
+    public Post(int id, String tittle, String content, String createAt, int likes) {
         this.id = id;
         this.tittle = tittle;
         this.content = content;
@@ -25,11 +25,11 @@ public class Post {
         this.likes = likes;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -49,11 +49,11 @@ public class Post {
         this.content = content;
     }
 
-    public Date getCreateAt() {
+    public String getCreateAt() {
         return createAt;
     }
 
-    public void setCreateAt(Date createAt) {
+    public void setCreateAt(String createAt) {
         this.createAt = createAt;
     }
 

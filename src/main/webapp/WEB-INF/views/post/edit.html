@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
 </head>
 <body>
+<h3>Products</h3>
 
+<form method="post"  >
+    <input type="hidden" th:value="${posts.id}">
+    Content: <input type="text" name="content" th:value="${posts.content}">
+    <br/>
+    CreateAt:<input type="text" name="createAt" th:value="${posts.createAt}">
+    <br/>
+    Likes:<input type="text" name="likes" th:value="${posts.likes}">
+    <br/>
+    Title:<input type="text" name="tittle" th:value="${posts.tittle}">
+    <button>Edit</button>
+</form>
+
+
+<footer th:replace="/layout :: footer"></footer>
 </body>
 </html>
